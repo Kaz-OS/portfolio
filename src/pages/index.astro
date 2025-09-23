@@ -6,8 +6,9 @@ import Layout from "../layouts/Layout.astro"
 <Layout>
     <img src={pp.src} draggable="false" id="me" alt="Me">
     <h2>Esteban Rattier ~</h2>
-    <p>I'm a junior developer, actually student in dev school, take a look at my <a href="https://github.com/Kaz-OS/resume/releases/latest/download/Esteban_Rattier_CV.pdf" target="_blank">resume</a>.<br /></p>
-    <div id="horizontal" role="separator" aria-orientation="horizontal"></div>
+    <p>I'm a junior developer, currently a student in a dev school. Take a look at my <a href="https://github.com/Kaz-OS/resume/releases/latest/download/Esteban_Rattier_CV.pdf" target="_blank">resume</a>.
+        If I don't reply, i'm just coding, don't worry...<br /></p>
+    <div id="h-sep" role="separator" aria-orientation="horizontal"></div>
     <section id="workspace">
         <section id="contact">
             <h3>Contacts :</h3>
@@ -30,14 +31,27 @@ import Layout from "../layouts/Layout.astro"
     font-family: 'Satoshi', sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+}
+
 ::selection {
-    background-color: oklch(0.88 0.06 351 / 0.5);
-    color: #2a2a2a;
+  background: #bbb3ff81;
+}
+
+
+img {
+    margin-bottom: 1rem;
+    align-items: center;
+    user-select: none;
 }
 
 h1, h2{
     color: #666;
     line-height: 1rem;
+    align-items: center;
 }
 
 h3 {
@@ -46,30 +60,60 @@ h3 {
 }
 
 p {
-    line-height: 0.6rem;
+    text-align: justify;
+    max-width: 20rem;
 }
 
 a {
     color: black;
 }
 
-#horizontal{
-    width: 35rem;
+#h-sep{
+    width: 20rem;
     height: 1px;
     border: none;
     background-color: #aaa;
-    margin: 1.5rem 0;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
 }
 
-#contact {
+#contact, #project {
     margin-left: 0;
     display: flex;
     flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem 0;
+    border-left: 2px solid #f0f0f0;
+    padding-left: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+#contact:hover, #project:hover {
+    border-left-color: #bbb3ff81;
+}
+
+#contact h3, #project h3 {
+    margin: 0 0 0.5rem 0;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+#contact a, #project a {
+    font-size: 0.95rem;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+#contact a:hover, #project a:hover {
+    opacity: 1;
 }
 
 #workspace {
     display: flex;
-    gap: 5rem;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
 }
 
 #me {
