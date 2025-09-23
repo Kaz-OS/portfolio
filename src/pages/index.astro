@@ -1,19 +1,19 @@
 ---
+import pp from "../images/pp.png"
 import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-    <h1>Hi ~</h1>
-    <h2>Esteban Rattier</h2>
-    <p>I'm a junior developer, actually student in dev school, view my <a href="https://github.com/Kaz-OS/resume/releases/latest/download/Esteban_Rattier_CV.pdf" target="_blank">resume</a>.<br /></p>
-    <hr id="horizontal">
+    <img src={pp.src} draggable="false" id="me" alt="Me">
+    <h2>Esteban Rattier ~</h2>
+    <p>I'm a junior developer, actually student in dev school, take a look at my <a href="https://github.com/Kaz-OS/resume/releases/latest/download/Esteban_Rattier_CV.pdf" target="_blank">resume</a>.<br /></p>
+    <div id="horizontal" role="separator" aria-orientation="horizontal"></div>
     <section id="workspace">
         <section id="contact">
             <h3>Contacts :</h3>
             <a href="https://linkedin.com/in/estebanrattier" target="_blank">LinkedIn</a>
             <a href="mailto:rattier.esteban.pro@gmail.com">Mail</a>
         </section>
-        <div class="v-sep" role="separator" aria-orientation="vertical"></div>
         <section id="project">
             <h3>Projects :</h3>
             <a href="https://github.com/Kaz-OS" target="_blank">GitHub</a>
@@ -31,7 +31,7 @@ import Layout from "../layouts/Layout.astro"
 }
 
 ::selection {
-    background-color: #ffd7e7;
+    background-color: oklch(0.88 0.06 351 / 0.5);
     color: #2a2a2a;
 }
 
@@ -54,11 +54,11 @@ a {
 }
 
 #horizontal{
-    width: 31rem;
+    width: 35rem;
     height: 1px;
     border: none;
     background-color: #aaa;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
 
 #contact {
@@ -72,11 +72,10 @@ a {
     gap: 5rem;
 }
 
-.v-sep {
-    margin: 1rem 0;
-    width: 1.7px;
-    height: 6rem;
-    border: none;
-    background-color: #aaa;
+#me {
+    width: 3.8rem;
+    border-radius: 60px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 </style>
